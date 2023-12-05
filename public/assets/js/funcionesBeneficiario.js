@@ -1,4 +1,4 @@
-const url = 'http://localhost:8484/beneficiario'
+const url = 'hhttps://gymsystembd.onrender.com/beneficiario'
 
 const listarBeneficiarios = async() => {
     //Objeto del html donde se deslegará la información

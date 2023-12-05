@@ -1,4 +1,4 @@
-const url = 'http://localhost:8484/cliente'
+const url = 'https://gymsystembd.onrender.com/cliente'
 
 const listarClientes = async() => {
     //Objeto del html donde se deslegará la información
