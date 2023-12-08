@@ -59,8 +59,6 @@ const registrarBeneficiario= () => {
     const correoBeneficiario = document.getElementById('correoBeneficiario').value
     const telefonoBeneficiario = document.getElementById('telefonoBeneficiario').value
     const direccionBeneficiario = document.getElementById('direccionBeneficiario').value
-    const password = document.getElementById('password').value
-    const confirmarPassword = document.getElementById('confirmarPassword').value
     const estadoBeneficiario = document.getElementById('estadoBeneficiario').value
 
 
@@ -83,12 +81,6 @@ const registrarBeneficiario= () => {
     else if(estadoBeneficiario == ""){
         document.getElementById('estadoBeneficiarioHelp').innerHTML = 'Dato requerido'
     }
-    else if(password.length == 0){
-        document.getElementById('passwordHelp').innerHTML = 'Dato requerido'
-    }
-    else if(password != confirmarPassword){
-        alert('Las contraseñas no coinciden')
-    }
     else{
         let beneficiario = {
             nombreBeneficiario: nombreBeneficiario,
@@ -96,7 +88,6 @@ const registrarBeneficiario= () => {
             correoBeneficiario: correoBeneficiario,
             telefonoBeneficiario: telefonoBeneficiario,
             direccionBeneficiario: direccionBeneficiario,
-            password: password,
             estadoBeneficiario: estadoBeneficiario
         }
         
