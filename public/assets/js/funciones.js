@@ -1,4 +1,4 @@
-const url = 'hhttps://gymsystembd.onrender.com/cliente'
+const url = 'https://gymsystembd.onrender.com/cliente'
 
 const precioDolarInput = document.getElementById('precioDolar');
 
