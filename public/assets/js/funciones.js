@@ -1,4 +1,20 @@
-const url = 'https://gymsystembd.onrender.com/cliente'
+const url = 'hhttps://gymsystembd.onrender.com/cliente'
+
+const precioDolarInput = document.getElementById('precioDolar');
+
+// Realiza una solicitud a la API
+fetch('https://www.datos.gov.co/resource/mcec-87by.json')
+    .then(response => response.json())
+    .then(data => {
+        // Suponiendo que los datos de la API tienen una propiedad 'precioDolar'
+        const precioDolar = data[0].valor; 
+
+        // Asigna el precio del dólar a la caja de texto
+        precioDolarInput.value = precioDolar;
+    })
+    .catch(error => {
+        console.error('Error al obtener el precio del dólar:', error);
+    });
 
 const listarClientes = async() => {
     //Objeto del html donde se deslegará la información
@@ -28,6 +44,7 @@ const listarClientes = async() => {
             `<td>`+cliente.telefonoCliente+`</td>`+
             `<td>`+cliente.correoCliente+`</td>`+
             `<td>`+cliente.estadoCliente+`</td>`+
+            `<td>`+cliente.precioDolar+`</td>`+
             `<td  style="text-align: center;">
                                                     <div class="centered-container">
                                                     <i class="fa-regular fa-pen-to-square fa-xl me-2" onclick="abrirModalEditar('${objetoCliente}')"></i>
@@ -62,6 +79,7 @@ const registrarCliente= () => {
     const password = document.getElementById('password').value
     const confirmarPassword = document.getElementById('confirmarPassword').value
     const estadoCliente = document.getElementById('estadoCliente').value
+    const precioDolar = document.getElementById('precioDolar').value
 
 
     if(documentoCliente.length == 0){
@@ -97,7 +115,8 @@ const registrarCliente= () => {
             telefonoCliente: telefonoCliente,
             direccionCliente: direccionCliente,
             password: password,
-            estadoCliente: estadoCliente
+            estadoCliente: estadoCliente,
+            precioDolar: precioDolar
         }
         
         //Fecth permite reaizar peticiones http a una url
@@ -129,6 +148,7 @@ const actualizarCliente= () => {
     const telefonoCliente = document.getElementById('telefonoCliente').value
     const direccionCliente = document.getElementById('direccionCliente').value
     const estadoCliente = document.getElementById('estadoCliente').value
+    const precioDolar  = document.getElementById('precioDolar').value
 
    
     if(documentoCliente.length == 0){
@@ -157,7 +177,8 @@ const actualizarCliente= () => {
             correoCliente: correoCliente,
             telefonoCliente: telefonoCliente,
             direccionCliente: direccionCliente,
-            estadoCliente: estadoCliente
+            estadoCliente: estadoCliente,
+            precioDolar: precioDolar
         }
         
         //Fecth permite reaizar peticiones http a una url
@@ -228,6 +249,7 @@ const abrirModalEditar = (objetoCliente) => {
     document.getElementById('telefonoCliente').value = cliente.telefonoCliente;
     document.getElementById('direccionCliente').value = cliente.direccionCliente;
     document.getElementById('estadoCliente').value = cliente.estadoCliente;
+    document.getElementById('precioDolar').value = cliente.precioDolar;
 
     validarCamposModal();
 
@@ -251,6 +273,7 @@ const abrirModalEliminar = (objetoCliente) => {
     document.getElementById('telefonoClienteEliminar').value = cliente.telefonoCliente;
     document.getElementById('direccionClienteEliminar').value = cliente.direccionCliente;
     document.getElementById('estadoClienteEliminar').value = cliente.estadoCliente;
+    document.getElementById('precioDolarEliminar').value = cliente.precioDolar;
 
      
 };

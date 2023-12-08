@@ -91,6 +91,9 @@
                                                     colspan="1" aria-label="Salary: activate to sort column ascending"
                                                     style="width: 93.0156px;">Estado</th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
+                                                    colspan="1" aria-label="Age: activate to sort column ascending"
+                                                    style="width: 48.1719px;">precio Dolar</th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
                                                     colspan="1" aria-label="Salary: activate to sort column ascending"
                                                     style="width: 93.0156px;">Acciones</th>
                                             </tr>
@@ -241,6 +244,21 @@
                                             </div>
                                             </div>
 
+
+                                            {{!-- Campo precio Dolar --}}
+
+                                       <div class="col-lg-6">
+                                       <div class="form-group formularioRegistro__grupo" id="grupo__precioDolar">
+                                             <div class="formularioRegistro__grupo-input" >
+                                                <label for="precioDolar" class="formularioRegistro__label">precio Dolar *</label>
+                                                <input type="text" class="form-control" name="precioDolar" id="precioDolar" aria-describedby="precioDolarHelp" placeholder="Ingrese precio Dolar"/ readonly>               
+                                                
+                                             </div>
+                                             
+                                             <div><small id="precioDolarHelp" class="form-text text-muted"><br></small> </div>  
+                                          </div>
+                                      </div>
+
                         </div>
 
                     <div class="modal-footer">
@@ -356,9 +374,19 @@
                 </div>
                 </div>
 
-                        
+                {{!-- Campo precio Dolar --}}
 
-                                 </div>
+                                       <div class="col-lg-6">
+                                       <div class="form-group formularioRegistro__grupo" id="grupo__precioDolar">
+                                             <div class="formularioRegistro__grupo-input" >
+                                                <label for="precioDolar" class="formularioRegistro__label">precio Dolar *</label>
+                                                <input type="text" class="form-control" name="precioDolar" id="precioDolarEliminar" aria-describedby="precioDolarHelp" placeholder="Ingrese precio Dolar"readonly/>               
+                                                
+                                             </div>
+                                            
+                                             <div><small id="precioDolarHelp" class="form-text text-muted"><br></small> </div>  
+                                          </div>
+                                      </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-dark  previous action-button-previous float-end me-2" data-bs-dismiss="modal">Cancelar</button>
